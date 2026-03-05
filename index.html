@@ -42,6 +42,7 @@
     <main>
 	 <header><h3>A JavaScript Project by Oliver Warlick</h3></header>
 	 <h3 id="my-greeting">Good Morning</h3>
+	 <h3 id="my-day">Today is</h3>
 	    <p>This webpage greets users with an approrpiate salutation based on the time of day 
 		and displays different (as the kids say) cool visuals, also depending on the time of day.</p>
 	  <img src="" alt="time of day image" class="flexible" id="myPic">
@@ -79,6 +80,9 @@ Creates variables
     let myGreeting = "";
     let myColor = "";
     let myPic = "";
+	let dayTis = new Day();
+	let myDay = day.getDay();
+	let dayNotice = "";
 
     //LEAVE IN PLACE FOR TESTING REMOVE LINE BELOW!
 	
@@ -87,6 +91,7 @@ Creates variables
 		myColor = "orange";
 		myPic = "morning.jpg";
 		document.getElementById("myPic").src = "images/morning.jpg";
+		document.getElementById("my-day").innerHTML = ""; // Replace "Wednesday" with the actual day of the week
 	}else if(myHour >= 12 && myHour < 18){//afternoon
 		myGreeting = "Good Afternoon!";
 		myColor = "green";
@@ -104,6 +109,20 @@ Creates variables
 		document.getElementById("myPic").src = "images/night.jpg";
 	}
 
+	if(myDay = 0){//Sunday
+		dayNotice = "Today is Sunday";
+	}else if(myDay = 1){//Monday
+		dayNotice = "Today is Monday";
+	}else if(myDay = 2){//Tuesday
+		dayNotice = "Today is Monday";
+	}else if(myDay = 3){//Wednesday
+		dayNotice = "Today is Monday";
+	}else if(myDay = 4){//Thursday
+		dayNotice = "Today is Monday";
+	}else if(myDay = 5){//Friday
+		dayNotice = "Today is Monday";
+	}else(myDay = 6)//Saturday
+		dayNotice = "Today is Saturday";
 
     //pre=pend the images path
     myPic = "images/" + myPic;
@@ -112,10 +131,11 @@ Creates variables
     //Custom Message
     document.getElementById("my-greeting").innerHTML = myGreeting;
 
-
     //custom color
-    document.querySelector("html").style.backgroundColor = myColor
+    document.querySelector("html").style.backgroundColor = myColor;
 
+	//Day of the week message
+	document.getElementById("my-day").innerHTML = dayNotice;
 
     //custom pic
     document.getElementById("my-pic").src = myPic;
